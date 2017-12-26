@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Test Plan">
+    <listeners>
+        <listener class-name="com.epam.reportportal.testng.ReportPortalTestNGListener" />
+        <listener class-name="com.epam.framework.core.listeners.TAListener" />
+
+    </listeners>
+    <test name="API Tests">
+        <parameter name = "uri" value="https://api.github.com/gists"/>
+        <parameter name = "token" value="df3b0194279fceab6df56ce74ea3c3237d0704cd"/>
+        <parameter name = "gistID" value="05de8017b3292c8504314fb6bd19ace7"/>
+        <classes>
+            <class name="com.epam.framework.gist.api.tests.GistApiTest" />
+            <class name="com.epam.framework.gist.api.tests.RestApacheHttpClientTest" />
+            <class name="com.epam.framework.gist.api.tests.RestAssuredTest" />
+            <class name="com.epam.framework.gist.api.tests.RestTemplateTest" />
+        </classes>
+    </test>
+</suite>
